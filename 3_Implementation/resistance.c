@@ -10,7 +10,7 @@
  */
 float resistance(int C1, int C2, int C3, int C4)
 {
-    float resistance[2];
+    float resistance[4];
 
     //colour_1
     if(C1 == 0)

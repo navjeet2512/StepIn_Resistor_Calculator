@@ -23,6 +23,7 @@ int main()
     if((c3 == 8) || (c3 == 9) || (c4 == 0) || (c4 == 3) || (c4 == 4) || (c4 == 9))
     {
         printf("Invalid Input");
+        exit(0);
     }
     
     float result = resistance(c1,c2,c3,c4);
