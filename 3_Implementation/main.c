@@ -43,6 +43,18 @@ int main()
     RUN_TEST(test_tolerance);
     return UNITY_END();
 
+    printf("Welcome to Resitor Colour Coding Calculator");
+    printf("Select Your Colour Digits");
+    printf("0 : Black");
+    printf("1 : Brown");
+    printf("2 : Red");
+    printf("3 : Orange");
+    printf("4 : Yellow");
+    printf("5 : Green");
+    printf("6 : Blue");
+    printf("7 : Violet");
+    printf("8 : Grey");
+    printf("9 : White");
 
     int c1, c2, c3,c4;
     scanf("%d",&c1);
@@ -56,9 +68,9 @@ int main()
         exit(0);
     }
     
-    float result = resistance(c1,c2,c3);
+    int result = resistance(c1,c2,c3);
     float tolerance_output = tolerance(c4);
-    printf("The total resistacne of the Resistor is %f Ohm, With %f Tolerance.",result, tolerance_output);
+    printf("The total resistacne of the Resistor is %d Ohm, With %f Tolerance.",result, tolerance_output);
 
     return 0;
 }

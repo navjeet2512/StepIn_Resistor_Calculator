@@ -1,6 +1,6 @@
 #include "resistance.h"
 /**
- * @brief calulation of the resistance colour coding
+ * @brief This function is used to calculate the resistance of the resistor.
  * 
  * @param C1 Colour_1
  * @param C2 Colour_2
@@ -8,9 +8,9 @@
  * @param C4 Colour_4
  * @return int 
  */
-float resistance(int C1, int C2, int C3)
+int resistance(int C1, int C2, int C3)
 {
-    float resistance[3];
+    int resistance[3];
 
     //colour_1
     if(C1 == 0)
@@ -132,9 +132,16 @@ float resistance(int C1, int C2, int C3)
 
     
 
-    float total_resistance = ((resistance[0]*10) + resistance[1]) * resistance[2];
+    int total_resistance = ((resistance[0]*10) + resistance[1]) * resistance[2];
     return total_resistance;
 }
+
+/**
+ * @brief This function is used to calculate the tolerance value of the resistor.
+ * 
+ * @param C4 it is the tolerance value of the resistor 
+ * @return float 
+ */
 
 float tolerance(int C4)
 { 
