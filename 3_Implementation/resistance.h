@@ -14,6 +14,6 @@
 #include "stdlib.h"
 #include "math.h"
 
-float resistance(int C1, int C2, int C3, int C4);
-
+float resistance(int C1, int C2, int C3);
+float tolerance(int C4);
 #endif

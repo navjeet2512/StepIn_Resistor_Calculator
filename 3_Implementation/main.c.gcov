@@ -1,0 +1,76 @@
+        -:    0:Source:main.c
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    0:Source is newer than graph
+        -:    1:/**
+        -:    2: * @file main.c
+        -:    3: * @author Navjeet Singh
+        -:    4: * @brief this is the main function for the resistance calulator of a resistor
+        -:    5: * @version 0.1
+        -:    6: * @date 2021-09-04
+        -:    7: * 
+        -:    8: * @copyright Copyright (c) 2021
+        -:    9: * 
+        -:   10: */
+        -:   11:
+        -:   12:#include "stdio.h"
+        -:   13:#include "resistance.h"
+        -:   14:#include "unity.h"
+        -:   15:
+        1:   16:void setUp()
+        1:   16-block  0
+        -:   17:{
+        1:   18:}
+        1:   19:void tearDown()
+        1:   19-block  0
+        -:   20:{
+        1:   21:}
+        -:   22:
+        1:   23:void test_resistance()
+        1:   23-block  0
+        -:   24:{
+        1:   25:    TEST_ASSERT_EQUAL(1100.000000, resistance(1, 1, 2));
+        1:   25-block  0
+        1:   26:    TEST_ASSERT_EQUAL(10000000.000000, resistance(0, 1, 7));
+        1:   27:    TEST_ASSERT_EQUAL(220000.000000, resistance(2, 2, 4));
+        1:   28:    TEST_ASSERT_EQUAL(440000.000000, resistance(4, 4, 4));   
+        1:   29:}
+        -:   30:void test_tolerance()
+        1:   31:{
+        1:   31-block  0
+        -:   32:    TEST_ASSERT_EQUAL(0.5, tolerance(5));
+        1:   33:    TEST_ASSERT_EQUAL(0.05, tolerance(8));
+        1:   33-block  0
+        1:   34:    TEST_ASSERT_EQUAL(1.000000, tolerance(1));
+        1:   35:    TEST_ASSERT_EQUAL(0.5, tolerance(7));
+        -:   36:    
+        -:   37:}
+        -:   38:
+        -:   39:int main()
+        -:   40:{
+        -:   41:    UNITY_BEGIN();
+        -:   42:    RUN_TEST(test_resistance);
+        -:   43:    RUN_TEST(test_tolerance);
+        -:   44:    return UNITY_END();
+        -:   45:
+        -:   46:
+        -:   47:    int c1, c2, c3,c4;
+        -:   48:    scanf("%d",&c1);
+        -:   49:    scanf("%d",&c2);
+        -:   50:    scanf("%d",&c3);
+        -:   51:    scanf("%d",&c4);
+        -:   52:
+        -:   53:    if((c3 == 8) || (c3 == 9) || (c4 == 0) || (c4 == 3) || (c4 == 4) || (c4 == 9))
+        -:   54:    {
+        -:   55:        printf("Invalid Input");
+        -:   56:        exit(0);
+        -:   57:    }
+        -:   58:    
+        -:   59:    float result = resistance(c1,c2,c3);
+        -:   60:    float tolerance_output = tolerance(c4);
+        -:   61:    printf("The total resistacne of the Resistor is %f Ohm, With %f Tolerance.",result, tolerance_output);
+        -:   62:
+        -:   63:    return 0;
+        -:   64:}

@@ -8,9 +8,9 @@
  * @param C4 Colour_4
  * @return int 
  */
-float resistance(int C1, int C2, int C3, int C4)
+float resistance(int C1, int C2, int C3)
 {
-    float resistance[4];
+    float resistance[3];
 
     //colour_1
     if(C1 == 0)
@@ -130,33 +130,40 @@ float resistance(int C1, int C2, int C3, int C4)
         resistance[2] = 10000000;
     }
 
-    //colour_4
-    if(C4 == 1)
-    {
-        resistance[3] = 1;
-    }
-    if(C4 == 2)
-    {
-        resistance[3] = 2;
-    }
-    if(C4 == 5)
-    {
-        resistance[3] = 0.5;
-    }
-    if(C4 == 6)
-    {
-        resistance[3] = 0.25;
-    }
-    if(C4 == 7)
-    {
-        resistance[3] = 0.1;
-    }
-    if(C4 == 8)
-    {
-        resistance[3] = 0.05;
-    }
+    
 
     float total_resistance = ((resistance[0]*10) + resistance[1]) * resistance[2];
     return total_resistance;
 }
 
+float tolerance(int C4)
+{ 
+    float tollerance = 0;
+ 
+    if(C4 == 1)
+    {
+        tollerance = 1;
+    }
+    if(C4 == 2)
+    {
+        tollerance = 2;
+    }
+    if(C4 == 5)
+    {
+        tollerance = 0.5;
+    }
+    if(C4 == 6)
+    {
+        tollerance = 0.25;
+    }
+    if(C4 == 7)
+    {
+        tollerance = 0.1;
+    }
+    if(C4 == 8)
+    {
+        tollerance = 0.05;
+    }
+
+    return tollerance;
+}

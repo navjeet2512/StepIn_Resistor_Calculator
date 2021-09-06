@@ -11,9 +11,39 @@
 
 #include "stdio.h"
 #include "resistance.h"
+#include "unity.h"
+
+void setUp()
+{
+}
+void tearDown()
+{
+}
+
+void test_resistance()
+{
+    TEST_ASSERT_EQUAL(1100.000000, resistance(1, 1, 2));
+    TEST_ASSERT_EQUAL(10000000.000000, resistance(0, 1, 7));
+    TEST_ASSERT_EQUAL(220000.000000, resistance(2, 2, 4));
+    TEST_ASSERT_EQUAL(440000.000000, resistance(4, 4, 4));   
+}
+void test_tolerance()
+{
+    TEST_ASSERT_EQUAL(0.5, tolerance(5));
+    TEST_ASSERT_EQUAL(0.05, tolerance(8));
+    TEST_ASSERT_EQUAL(1.000000, tolerance(1));
+    TEST_ASSERT_EQUAL(0.5, tolerance(7));
+    
+}
 
 int main()
 {
+    UNITY_BEGIN();
+    RUN_TEST(test_resistance);
+    RUN_TEST(test_tolerance);
+    return UNITY_END();
+
+
     int c1, c2, c3,c4;
     scanf("%d",&c1);
     scanf("%d",&c2);
@@ -26,9 +56,9 @@ int main()
         exit(0);
     }
     
-    float result = resistance(c1,c2,c3,c4);
-
-    printf("%f \n",result);
+    float result = resistance(c1,c2,c3);
+    float tolerance_output = tolerance(c4);
+    printf("The total resistacne of the Resistor is %f Ohm, With %f Tolerance.",result, tolerance_output);
 
     return 0;
 }
